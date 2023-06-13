@@ -1,0 +1,22 @@
+nav{
+    display: flex;
+    height: 5rem;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+
+    border: solid red;
+}
+
+.logout-button{
+    
+}
+
+.links{
+    font-size: 2rem;
+    font-family: sans-serif ;
+    color: black;
+
+    border: solid yellow;
+}
