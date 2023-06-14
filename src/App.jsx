@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AllItems from "./components/AllItems";
 import NavBar from "./components/NavBar";
 import Register from "./components/Register";
-
+import SingleItem from "./components/SingleItem";
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
@@ -12,7 +12,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/post
 function App() {
   const [items, setItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [singleItemId, setSingleItemId] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,38 +31,20 @@ function App() {
 
   return (
     <div>
-      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-   
-  
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
-
-
-      <AllItems items={items} />
-
-      <Routes> 
-      {/* Need to add element={<Name to each/>} */}
-        <Route path="/home"/> 
-        <Route path="/posts" />
+      <Routes>
+        {/* Need to add element={<Name to each/>} */}
+        <Route path="/posts" element={<AllItems items={items} />} />
+        <Route path="/post/:id" element={<SingleItem items={items} />} />
         <Route path="/login" />
-        <Route path="/register" element={<Register  setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route
+          path="/register"
+          element={<Register setIsLoggedIn={setIsLoggedIn} />}
+        />
       </Routes>
-
     </div>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- );
+  );
 }
 
 export default App;
