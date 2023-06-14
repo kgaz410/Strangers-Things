@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 } */
+
+body {
+  background: linear-gradient(to right, #36454f 22%, #052c54);
+  color: whitesmoke;
+}
+
+.item-container {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: center, space-evenly;
+  /* border: 2px solid pink; */
+  padding: 3%;
+}
+
+#all-Items-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
