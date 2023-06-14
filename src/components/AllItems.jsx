@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import SingleItem from "./SingleItem";
 
 const AllItems = (props) => {
   console.log(props);
   return props.items && props.items.length ? (
     props.items.map((e) => {
-      console.log(e);
       return (
-        <div className="items-container" key={e._id}>
-          <h2>{e.title}</h2>
+        <div id="all-Items-Container" key={e._id}>
+          <div className="item-container">
+            <Link to={`/post/${e._id}`}>{e.title}</Link>
+
+            {/* <SingleItem description={description} /> */}
+          </div>
         </div>
       );
     })
