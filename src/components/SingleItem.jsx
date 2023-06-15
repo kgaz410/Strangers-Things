@@ -1,7 +1,9 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Delete from "./Delete";
 import Message from "./Messages";
-const COHORT_NAME = "2304-FTB-ET-WEB-FT";
+
+const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
 
 const SingleItem = (props) => {

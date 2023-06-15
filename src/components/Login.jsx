@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const COHORT_NAME = "2304-FTB-ET-WEB-FT";
+const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // useNavigate('/posts');
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,9 +16,11 @@ function Login(props) {
     try {
       const result = await loginUser(); // Passing our async function in from below.
       console.log(result.data);
-
+    
       localStorage.setItem("token", result.data.token); // Fetching only key-value pair for token for the login.
       props.setIsLoggedIn(true); // Telling program login is true.
+
+      navigate('/posts');
     } catch (error) {
       console.log(error);
     }

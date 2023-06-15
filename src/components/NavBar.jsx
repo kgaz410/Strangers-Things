@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import "./NavBar.css";
 
@@ -8,17 +8,14 @@ function NavBar(props) {
       {props.isLoggedIn ? (
         <>
           {/* // This link is only showed when user is logged in. */}
-          <Link className="links" to="/home">
-            Home
-          </Link>
-          <button
-            className="logout-button"
+          <Link className="links" to="/posts">Posts</Link>
+          <Link className="links" to="/profile">My Profile</Link>
+          <Link className="links" to="/create-post">Create a Post</Link>
+          <button className="logout-button"
             onClick={() => {
               props.setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
-            }}
-          >
-            Logout
+            }}>Logout
           </button>
         </>
       ) : (

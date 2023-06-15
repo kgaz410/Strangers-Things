@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SingleItem from "./SingleItem";
+import Delete from "./Delete";
+
 
 const AllItems = (props) => {
   console.log(props);
@@ -10,9 +11,8 @@ const AllItems = (props) => {
         props.items.map((e) => {
           return (
             <div key={e._id} className="item-container">
-              <Link className="link-text" to={`/post/${e._id}`}>
-                {e.title}{" "}
-              </Link>
+              <Link className="link-text" to={`/post/${e._id}`}> {e.title}{" "} </Link>
+              <Delete id={e._id} items={props.items} setItems={props.setItems}/>
             </div>
           );
         })

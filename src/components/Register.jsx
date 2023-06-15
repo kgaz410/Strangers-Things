@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const COHORT_NAME = "2304-FTB-ET-WEB-FT";
+const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 
 function Register(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // useNavigate('/home'); need to make offical homepage
+    const navigate = useNavigate();
 
     // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
@@ -22,6 +22,7 @@ function Register(props) {
             localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
             props.setIsLoggedIn(true)  // Telling program login is true.
 
+            navigate('/posts')
         } catch (error) {
             console.log(error)
         }
