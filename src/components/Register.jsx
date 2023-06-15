@@ -22,7 +22,7 @@ function Register(props) {
             localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
             props.setIsLoggedIn(true)  // Telling program login is true.
 
-            navigate('/posts')
+            navigate('/')
         } catch (error) {
             console.log(error)
         }

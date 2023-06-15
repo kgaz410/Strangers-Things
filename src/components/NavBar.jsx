@@ -8,7 +8,7 @@ function NavBar(props) {
       {props.isLoggedIn ? (
         <>
           {/* // This link is only showed when user is logged in. */}
-          <Link className="links" to="/posts">Posts</Link>
+          <Link className="links" to="/">Posts</Link>
           <Link className="links" to="/profile">My Profile</Link>
           <Link className="links" to="/create-post">Create a Post</Link>
           <button className="logout-button"
@@ -21,7 +21,7 @@ function NavBar(props) {
       ) : (
         <>
           {/* // These links are showed when the user is logged out. */}
-          <Link className="links" to="/posts">
+          <Link className="links" to="/">
             Posts
           </Link>
           <Link className="links" to="/login">
