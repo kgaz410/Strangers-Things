@@ -33,9 +33,9 @@ const SingleItem = (props) => {
           <h2>{filteredItem.title}</h2>
           <p>{filteredItem.author.username}</p>
           <p>{filteredItem.description}</p>
-          <p>
+          <>
             <Message />
-          </p>
+          </>
         </div>
       ) : null}
     </>

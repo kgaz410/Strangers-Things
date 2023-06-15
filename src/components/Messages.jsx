@@ -12,7 +12,6 @@ function Message(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, password);
     try {
       const result = await loginUser(); // Passing our async function in from below.
       console.log(result.data);
@@ -54,18 +53,8 @@ function Message(props) {
     <div>
       <h1>Message Author</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Message:
-          <input
-            id="message-box"
-            type="textarea"
-            value={newMessage}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setNewMessage(e.target.value);
-            }}
-          />
-        </label>
+        <label htmlFor="messages">Send a message to the Author</label>
+        <textarea id="messages" name="messages" rows="10" cols="30"></textarea>
 
         <button type="submit">Submit</button>
       </form>
