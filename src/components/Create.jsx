@@ -12,6 +12,7 @@ function Create(props) {
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
    const [deliver, setDeliver] = useState(false);
+   const navigate = useNavigate();
 
     // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
@@ -24,7 +25,7 @@ function Create(props) {
             // localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
             // props.setIsLoggedIn(true)  // Telling program login is true.
 
-            navigate('/posts')
+            navigate('/')
         } catch (error) {
             console.log(error)
         }

@@ -1,6 +1,5 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Delete from "./Delete";
 import Message from "./Messages";
 
 const COHORT_NAME = "2304-ftb-et-web-ft";

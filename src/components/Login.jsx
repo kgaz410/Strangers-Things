@@ -20,7 +20,7 @@ function Login(props) {
       localStorage.setItem("token", result.data.token); // Fetching only key-value pair for token for the login.
       props.setIsLoggedIn(true); // Telling program login is true.
 
-      navigate('/posts');
+      navigate('/');
     } catch (error) {
       console.log(error);
     }

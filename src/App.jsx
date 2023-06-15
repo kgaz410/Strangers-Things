@@ -32,7 +32,6 @@ useEffect(() => {
       try {
         const response = await fetch(BASE_URL);
         const result = await response.json();
-        console.log("this is the result")
         console.log(result);
 
         setItems(result.data.posts);
@@ -49,7 +48,7 @@ useEffect(() => {
 
       <Routes>
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/posts" element={<AllItems items={items} setItems={setItems}/>} />
+        <Route path="/" element={<AllItems items={items} setItems={setItems}/>} />
         <Route path="/post/:id" element={<SingleItem items={items} />} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
