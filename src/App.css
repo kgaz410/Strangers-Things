@@ -3,17 +3,24 @@ body {
   color: whitesmoke;
 }
 
+.link-text {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
 .item-container {
   display: flex;
   width: 20%;
-  flex-direction: column;
+
   justify-content: center, space-evenly;
-  /* border: 2px solid pink; */
-  padding: 3%;
+
+  padding: 5%;
 }
 
 #all-Items-Container {
+  font-size: 2.2rem;
   display: flex;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   justify-content: center;
 }
