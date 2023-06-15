@@ -1,19 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Create.css"
 import { useNavigate } from "react-router-dom";
 
-const COHORT_NAME = "2304-FTB-ET-WEB-FT";
+const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
-const TOKEN_STRING_HERE = 'eyJfaWQiOiI1ZTg5MDY2ZGQ0MzkxNjAwTc1NTNlMDUiLCJ1c2VybmFtZSI6Im1hdHQiLCJpYXQiOjE1ODYwMzgzODF9';
+// const TOKEN_STRING_HERE = 'eyJfaWQiOiI1ZTg5MDY2ZGQ0MzkxNjAwTc1NTNlMDUiLCJ1c2VybmFtZSI6Im1hdHQiLCJpYXQiOjE1ODYwMzgzODF9';
 
-function Create() {
+function Create(props) {
    const [title, setTitle] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
    const [deliver, setDeliver] = useState(false);
-
-  
 
     // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
@@ -26,38 +24,46 @@ function Create() {
             // localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
             // props.setIsLoggedIn(true)  // Telling program login is true.
 
-            // navigate('/posts')
+            navigate('/posts')
         } catch (error) {
             console.log(error)
         }
 
     }
 
+
+
+
+
+
     async function createPost() {
         try {
-            const response = await fetch(`${BASE_URL}/posts`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    'Authorization': `Bearer ${TOKEN_STRING_HERE}`
-                },
-                body: JSON.stringify({
-                    post: {
-                       title: title,
-                       description: description,
-                       price: price,
-                       willDeliver: deliver
-                    }
-                })
-            });  // Outside of fetch starting here.
-            const result = await response.json()
-
-            setTitle(result.data.posts.title)
-            setDescription(result.data.posts.description)
-            setPrice(result.data.posts.price)
-            setDeliver(result.data.posts.willDeliver)
-            console.log(result)
-            return result;
+            if(props.isLoggedIn) {
+                const token = localStorage.getItem("token");
+                const response = await fetch(`${BASE_URL}/posts`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        post: {
+                           title: title,
+                           description: description,
+                           price: price,
+                           willDeliver: deliver
+                        }
+                    })
+                });  // Outside of fetch starting here.
+                const result = await response.json()
+    
+                setTitle(result.title)
+                setDescription(result.description)
+                setPrice(result.price)
+                setDeliver(result.willDeliver)
+                console.log(result)
+                return result;
+            }
         } catch (error) {
             console.log(error)
         }
@@ -117,7 +123,7 @@ function Create() {
 
 
 
-                <button type="submit">Create New Post</button>
+                <button id="create-button"type="submit">Create New Post</button>
 
             </form>
         </div>
