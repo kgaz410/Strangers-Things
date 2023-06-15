@@ -1,6 +1,6 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import Message from "./Messages";
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
 
@@ -32,6 +32,10 @@ const SingleItem = (props) => {
         <div className="single-item-container">
           <h2>{filteredItem.title}</h2>
           <p>{filteredItem.author.username}</p>
+          <p>{filteredItem.description}</p>
+          <p>
+            <Message />
+          </p>
         </div>
       ) : null}
     </>

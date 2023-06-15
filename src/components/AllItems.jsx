@@ -4,20 +4,22 @@ import SingleItem from "./SingleItem";
 
 const AllItems = (props) => {
   console.log(props);
-  return props.items && props.items.length ? (
-    props.items.map((e) => {
-      return (
-        <div id="all-Items-Container" key={e._id}>
-          <div className="item-container">
-            <Link to={`/post/${e._id}`}>{e.title}</Link>
-
-            {/* <SingleItem description={description} /> */}
-          </div>
-        </div>
-      );
-    })
-  ) : (
-    <p>Loading...</p>
+  return (
+    <div id="all-Items-Container">
+      {props.items && props.items.length ? (
+        props.items.map((e) => {
+          return (
+            <div key={e._id} className="item-container">
+              <Link className="link-text" to={`/post/${e._id}`}>
+                {e.title}{" "}
+              </Link>
+            </div>
+          );
+        })
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
   );
 };
 
