@@ -67,8 +67,3 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-
-#message-box {
-  height: 20%;
-  width: 8%;
-}
