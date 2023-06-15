@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SingleItem from "./SingleItem";
+
 
 const AllItems = (props) => {
   console.log(props);
@@ -11,7 +11,6 @@ const AllItems = (props) => {
           <div className="item-container">
             <Link to={`/post/${e._id}`}>{e.title}</Link>
 
-            {/* <SingleItem description={description} /> */}
           </div>
         </div>
       );

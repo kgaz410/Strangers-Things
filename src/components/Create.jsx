@@ -4,17 +4,20 @@ import { useNavigate } from "react-router-dom";
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
+const TOKEN_STRING_HERE = 'eyJfaWQiOiI1ZTg5MDY2ZGQ0MzkxNjAwTc1NTNlMDUiLCJ1c2VybmFtZSI6Im1hdHQiLCJpYXQiOjE1ODYwMzgzODF9';
 
+function Create() {
+   const [title, setTitle] = useState("");
+   const [description, setDescription] = useState("");
+   const [price, setPrice] = useState("");
+   const [deliver, setDeliver] = useState(false);
 
-function Register(props) {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+  
 
     // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
         e.preventDefault()
-        console.log(username, password)
+        // console.log(username, password)
         try {
             const result = await registerUser(); // Passing our async function in from below.
             console.log(result.data)
@@ -29,22 +32,26 @@ function Register(props) {
 
     }
 
-    async function registerUser() {
+    async function createPost() {
         try {
-            const response = await fetch(`${BASE_URL}/users/register`, {
+            const response = await fetch(`${BASE_URL}/posts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    'Authorization': `Bearer ${TOKEN_STRING_HERE}`
                 },
                 body: JSON.stringify({
-                    user: {
-                        username: username,
-                        password: password,
-                       
+                    post: {
+                       title: title,
+                       description: description,
+                       price: price,
+                       willDeliver: deliver
                     }
                 })
             });  // Outside of fetch starting here.
             const result = await response.json()
+
+            // set states
             return result;
         } catch (error) {
             console.log(error)
@@ -55,7 +62,7 @@ function Register(props) {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <label>Username:
+                <label>Title:
                     <input
                         type="text"
                         value={username}
