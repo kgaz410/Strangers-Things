@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import "./Create.css"
 import { useNavigate } from "react-router-dom";
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 const TOKEN_STRING_HERE = 'eyJfaWQiOiI1ZTg5MDY2ZGQ0MzkxNjAwTc1NTNlMDUiLCJ1c2VybmFtZSI6Im1hdHQiLCJpYXQiOjE1ODYwMzgzODF9';
 
-function Create() {
+function Delete() {
    const [title, setTitle] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
@@ -33,29 +32,19 @@ function Create() {
 
     }
 
-    async function createPost() {
+    async function deletePost() {
         try {
-            const response = await fetch(`${BASE_URL}/posts`, {
-                method: "POST",
+            const response = await fetch(`${BASE_URL}/posts/5e8d1bd48829fb0017d2233b`, {
+                method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
                     'Authorization': `Bearer ${TOKEN_STRING_HERE}`
                 },
-                body: JSON.stringify({
-                    post: {
-                       title: title,
-                       description: description,
-                       price: price,
-                       willDeliver: deliver
-                    }
-                })
+
             });  // Outside of fetch starting here.
             const result = await response.json()
 
-            setTitle(result.data.posts.title)
-            setDescription(result.data.posts.description)
-            setPrice(result.data.posts.price)
-            setDeliver(result.data.posts.willDeliver)
+
             console.log(result)
             return result;
         } catch (error) {
@@ -127,4 +116,4 @@ function Create() {
 
 
 
-export default Create;
+export default Delete;

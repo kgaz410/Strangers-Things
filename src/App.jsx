@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import SingleItem from "./components/SingleItem";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import Create from "./components/Create";
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
@@ -14,7 +15,17 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/post
 function App() {
   const [items, setItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [singleItemId, setSingleItemId] = useState([]);
+  // const [singleItemId, setSingleItemId] = useState([]);
+
+  // This functions keeps the user logged so they can move from page to page without being logged out.
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    setIsLoggedIn(true)
+  }
+}, []);
+
+
 
   useEffect(() => {
     async function fetchData() {
@@ -41,6 +52,7 @@ function App() {
         <Route path="/post/:id" element={<SingleItem items={items} />} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
+        <Route path="/create-post" element={<Create setIsLoggedIn={setIsLoggedIn}/>} />
       </Routes>
     </div>
   );
