@@ -19,14 +19,12 @@ function App() {
   // const [singleItemId, setSingleItemId] = useState([]);
 
   // This functions keeps the user logged so they can move from page to page without being logged out.
-useEffect(() => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    setIsLoggedIn(true)
-  }
-}, []);
-
-
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -48,12 +46,43 @@ useEffect(() => {
       <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
       <Routes>
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/" element={<AllItems loggedInUser={loggedInUser} items={items} setItems={setItems}/>} />
-        <Route path="/post/:id" element={<SingleItem items={items} />} />
-        <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path="/register" element={<Register setLoggedInUser={setLoggedInUser} setIsLoggedIn={setIsLoggedIn} />}/>
-        <Route path="/create-post" element={<Create isLoggedIn={isLoggedIn}/>} />
+        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/"
+          element={
+            <AllItems
+              loggedInUser={loggedInUser}
+              items={items}
+              setItems={setItems}
+            />
+          }
+        />
+        <Route
+          path="/post/:id"
+          element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
+        />
+        <Route
+          path="/login"
+          element={
+            <Login
+              setLoggedInUser={setLoggedInUser}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Register
+              setLoggedInUser={setLoggedInUser}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/create-post"
+          element={<Create isLoggedIn={isLoggedIn} />}
+        />
       </Routes>
     </div>
   );

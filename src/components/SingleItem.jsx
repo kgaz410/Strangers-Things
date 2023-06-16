@@ -37,7 +37,7 @@ const SingleItem = (props) => {
           <p>{filteredItem.price}</p>
           <p>{filteredItem.willDeliver}</p>
           <>
-            <Message/>
+            <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
           </>
         </div>
       ) : null}
