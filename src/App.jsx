@@ -15,6 +15,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/post
 function App() {
   const [items, setItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState("");
   // const [singleItemId, setSingleItemId] = useState([]);
 
   // This functions keeps the user logged so they can move from page to page without being logged out.
@@ -48,10 +49,10 @@ useEffect(() => {
 
       <Routes>
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/" element={<AllItems items={items} setItems={setItems}/>} />
+        <Route path="/" element={<AllItems loggedInUser={loggedInUser} items={items} setItems={setItems}/>} />
         <Route path="/post/:id" element={<SingleItem items={items} />} />
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
+        <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/register" element={<Register setLoggedInUser={setLoggedInUser} setIsLoggedIn={setIsLoggedIn} />}/>
         <Route path="/create-post" element={<Create isLoggedIn={isLoggedIn}/>} />
       </Routes>
     </div>

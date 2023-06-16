@@ -6,57 +6,69 @@ const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Message(props) {
-  const [token, setToken] = useState("");
-  const [newMessage, setNewMessage] = useState("");
-  // useNavigate('/posts');
+  // const [token, setToken] = useState("");
+  const [newMessage, setNewMessage] = useState([]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await loginUser(); // Passing our async function in from below.
-      console.log(result.data);
+      const result = await createMessage(props.id); // Passing our async function in from below.
+      // console.log(result.data);
 
-      localStorage.setItem("token", result.data.token); // Fetching only key-value pair for token for the login.
-      //   props.setIsLoggedIn(true);
-      // Telling program login is true.
-      setToken(result.data.token);
+  
     } catch (error) {
       console.log(error);
     }
   };
 
-  async function createMessage() {
+  async function createMessage(postId) {
     try {
-      const response = await fetch(
-        `${BASE_URL}/posts/5e8929ddd439160017553e06/messages`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            message: {
-              content: { newMessage },
+      if(props.isLoggedIn) {
+        const response = await fetch(
+          `${BASE_URL}/posts/${postId}/messages`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
             },
-          }),
-        }
-      ); // Outside of fetch starting here.
-      const result = await response.json();
-      return result;
+            body: JSON.stringify({
+              message: {
+                content: newMessage,
+              },
+            }),
+          }
+        ); // Outside of fetch starting here.
+        const result = await response.json();
+        setNewMessage(result.messages)
+       
+        return result;
+
+
+      }
     } catch (error) {
       console.log(error);
     }
   }
-  createMessage();
+
   return (
     <div>
       <h1>Message Author</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="messages">Send a message to the Author</label>
-        <textarea id="messages" name="messages" rows="10" cols="30"></textarea>
+        <label htmlFor="messages">Send a message to the Author
+        <input
+        type="text"
+        value={newMessage}
+        onChange={(e) => {
+          console.log(e.target.value);
+          setNewMessage(e.target.value)
+        }}
+        />
+        </label>
+        {/* <textarea id="messages" name="messages" rows="10" cols="30"></textarea> */}
 
-        <button type="submit">Submit</button>
+        <button onSubmit={handleSubmit} id="message-button" type="submit">Send</button>
       </form>
     </div>
   );
