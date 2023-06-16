@@ -35,10 +35,11 @@ const AllItems = (props) => {
       <div id="all-Items-Container">
         {filteredItems.length ? ( 
           filteredItems.map((e) => {
+            console.log(props.loggedInUser)
             return (
               <div key={e._id} className="item-container">
                 <Link className="link-text" to={`/post/${e._id}`}> {e.title}{" "} </Link>
-                <Delete id={e._id} items={props.items} setItems={props.setItems}/>
+                {props.loggedInUser === e.author.username ? <Delete id={e._id} items={props.items} setItems={props.setItems}/> : "" }
               </div>
             );
           })

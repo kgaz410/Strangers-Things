@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
-// const TOKEN_STRING_HERE = 'eyJfaWQiOiI1ZTg5MDY2ZGQ0MzkxNjAwTc1NTNlMDUiLCJ1c2VybmFtZSI6Im1hdHQiLCJpYXQiOjE1ODYwMzgzODF9';
+
 
 function Create(props) {
    const [title, setTitle] = useState("");
@@ -21,9 +21,6 @@ function Create(props) {
         try {
             const result = await createPost(); // Passing our async function in from below.
             // console.log(result.data)
-
-            // localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
-            // props.setIsLoggedIn(true)  // Telling program login is true.
 
             navigate('/')
         } catch (error) {
