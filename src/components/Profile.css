@@ -5,11 +5,13 @@
   flex-direction: column;
   justify-content: center;
   font-family: Kanit;
-  /* border: 2px solid green; */
+  font-size: 1.25rem;
+
 }
 
 .profileTag {
-  /* border: 2px solid yellow; */
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
   display: flex;
   justify-content: center;
 }
@@ -23,6 +25,4 @@
   font-family: Kanit;
 }
 
-#messageBox {
-  /* border: 2px solid red; */
-}
+

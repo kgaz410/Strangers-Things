@@ -5,6 +5,7 @@ import Delete from "./Delete";
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
 
+
   // This function allows lowercase letters to be included in the filter.
   let filteredItems = props.items.filter((item) => {
     let lowercaseTitle = item.title.toLowerCase();
@@ -18,10 +19,11 @@ const AllItems = (props) => {
   return (
     <>
       <form id="searchbar">
-        <label htmlFor="name">Post Search</label>
-        <input
+        <label htmlFor="name"></label>
+        <input id="search"
           name="search-query"
           type="text"
+          placeholder="Search"
           value={searchQuery}
           onChange={(event) => {
             // This allows the users to change the search.
@@ -63,24 +65,4 @@ const AllItems = (props) => {
 
 export default AllItems;
 
-// const AllItems = (props) => {
-//   console.log(props);
-//   return (
-//     <div id="all-Items-Container">
-//       {props.items && props.items.length ? (
-//         props.items.map((e) => {
-//           return (
-//             <div key={e._id} className="item-container">
-//               <Link className="link-text" to={`/post/${e._id}`}> {e.title}{" "} </Link>
-//               <Delete id={e._id} items={props.items} setItems={props.setItems}/>
-//             </div>
-//           );
-//         })
-//       ) : (
-//         <p>Loading...</p>
-//       )}
-//     </div>
-//   );
-// };
 
-// export default AllItems;

@@ -51,9 +51,9 @@ function Login(props) {
 
   return (
     <div id="login-container">
-      <h1>LOGIN</h1>
+      <h1 id="loginheader">LOGIN</h1>
       <form id="loginform" onSubmit={handleSubmit}>
-        <label>
+        <label className="labels">
           Username:
           <input
             type="text"
@@ -65,7 +65,7 @@ function Login(props) {
           />
         </label>
 
-        <label>
+        <label className="labels">
           Password:
           <input
             type="password"
@@ -76,7 +76,7 @@ function Login(props) {
             }}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button id="loginbutton" type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Create.css"
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ function Create(props) {
    
         try {
             const result = await createPost(); // Passing our async function in from below.
-            // console.log(result.data)
+
 
             navigate('/')
         } catch (error) {

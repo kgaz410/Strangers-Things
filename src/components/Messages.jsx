@@ -1,20 +1,19 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Messages.css"
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Message(props) {
-  // const [token, setToken] = useState("");
+
   const [newMessage, setNewMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const result = await createMessage(props.id); // Passing our async function in from below.
-      // console.log(result.data);
+ 
     } catch (error) {
       console.log(error);
     }

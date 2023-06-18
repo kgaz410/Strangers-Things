@@ -25,7 +25,22 @@ body {
 #all-Items-Container {
   font-size: 2.2rem;
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   justify-content: center;
 }
+
+
+#searchbar{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#search{
+  width: 30rem;
+  height: 3rem;
+}
+  :placeholder-shown{
+    font-size: 1.5rem;
+  }
+
