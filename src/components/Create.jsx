@@ -20,7 +20,7 @@ function Create(props) {
    
         try {
             const result = await createPost(); // Passing our async function in from below.
-            // console.log(result.data)
+
 
             navigate('/')
         } catch (error) {

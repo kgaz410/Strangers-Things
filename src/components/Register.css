@@ -1,4 +1,4 @@
-#loginform{
+#registerform{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,7 +6,7 @@
 
 }
 
-#loginheader{
+#registerheader{
     font-size: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -25,7 +25,7 @@
     letter-spacing: 0.1rem;
 }
 
-#loginbutton{
+#registerbutton{
     width: 8rem;
     height: 2.5rem;
     border-style: solid;

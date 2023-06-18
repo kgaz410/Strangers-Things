@@ -1,4 +1,5 @@
 import React from "react";
+import "./Register.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -53,9 +54,10 @@ function Register(props) {
 
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Username:
+        <div id="register-container"> 
+            <h1 id="registerheader">REGISTER</h1>
+            <form id="registerform" onSubmit={handleSubmit}>
+                <label className="labels">Username:
                     <input
                         type="text"
                         value={username}
@@ -66,7 +68,7 @@ function Register(props) {
                     />
                 </label>
 
-                <label>Password:
+                <label className="labels">Password:
                     <input
                         type="password"
                         value={password}
@@ -76,7 +78,7 @@ function Register(props) {
                         }}
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <button id="registerbutton"type="submit">Submit</button>
 
             </form>
         </div>

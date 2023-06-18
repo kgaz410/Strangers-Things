@@ -16,7 +16,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState("");
-  // const [singleItemId, setSingleItemId] = useState([]);
+ 
 
   // This functions keeps the user logged so they can move from page to page without being logged out.
   useEffect(() => {

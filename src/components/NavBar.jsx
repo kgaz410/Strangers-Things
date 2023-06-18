@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import "./NavBar.css";
+import "./NavBar.css"
 
 function NavBar(props) {
+  let navigate = useNavigate();
   return (
     <nav>
       {props.isLoggedIn ? (
@@ -15,7 +16,8 @@ function NavBar(props) {
             onClick={() => {
               props.setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
-            }}>Logout
+              navigate("/")
+          }}>Logout
           </button>
         </>
       ) : (

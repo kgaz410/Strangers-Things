@@ -1,6 +1,5 @@
 import React from "react";
 import "./Delete.css";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const COHORT_NAME = "2304-ftb-et-web-ft";
@@ -8,6 +7,9 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 
 function Delete(props) {
+
+    const navigate = useNavigate();
+
  console.log(props)
     // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
@@ -16,7 +18,7 @@ function Delete(props) {
         try {
             const result = await deletePost(props.id); // Passing our async function in from below.
             // console.log(result.data)
-
+            navigate("/")
         } catch (error) {
             console.log(error)
         }
@@ -51,8 +53,10 @@ function Delete(props) {
                 })
     
                 props.setItems(filteredPosts)
+
             }
-      
+  
+
         } catch (error) {
             console.log(error)
         }
@@ -63,7 +67,7 @@ function Delete(props) {
         <div id="deletepost">
             
 
-                <button onClick={handleSubmit} type="submit">Delete Post</button>
+                <button id="delete-button" onClick={handleSubmit} type="submit">Delete Post</button>
 
             
         </div>
