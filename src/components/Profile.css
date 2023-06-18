@@ -1,7 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 .message-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: Kanit;
   /* border: 2px solid green; */
 }
 
@@ -17,6 +20,7 @@
   margin: 2rem;
   padding: 1%;
   background-color: #0a101e;
+  font-family: Kanit;
 }
 
 #messageBox {
