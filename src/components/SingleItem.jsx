@@ -1,6 +1,7 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Message from "./Messages";
+import "./SingleItem.css";
 
 const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
@@ -28,9 +29,9 @@ const SingleItem = (props) => {
   }, [props.items]);
 
   return (
-    <>
+    <div className="single-item-container">
       {filteredItem && filteredItem.title ? (
-        <div className="single-item-container">
+        <div>
           <h2>{filteredItem.title}</h2>
           <p>{filteredItem.author.username}</p>
           <p>{filteredItem.description}</p>
@@ -41,7 +42,7 @@ const SingleItem = (props) => {
           </>
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 
