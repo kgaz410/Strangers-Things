@@ -1,7 +1,8 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Message from "./Messages";
-import "./SingleItem.css";
+import "./SingleItem.css"
+
 
 const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
@@ -31,15 +32,17 @@ const SingleItem = (props) => {
   return (
     <div className="single-item-container">
       {filteredItem && filteredItem.title ? (
-        <div>
-          <h2>{filteredItem.title}</h2>
-          <p>{filteredItem.author.username}</p>
-          <p>{filteredItem.description}</p>
-          <p>{filteredItem.price}</p>
-          <p>{filteredItem.willDeliver}</p>
-          <>
+
+        <div className="single-item-container">
+          <h2 id="title">{filteredItem.title}</h2>
+          <p className="filtered-item">Author: {filteredItem.author.username}</p>
+          <p className="filtered-item">Description: {filteredItem.description}</p>
+          <p className="filtered-item">Price: {filteredItem.price}</p>
+          <p className="filtered-item">{filteredItem.willDeliver}</p>
+          <div id="message-author">
             <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
-          </>
+          </div>
+
         </div>
       ) : null}
     </div>

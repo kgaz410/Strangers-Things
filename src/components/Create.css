@@ -1,35 +1,57 @@
-#createpost {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 3rem;
 
-  border: solid rgb(255, 254, 254);
+#createpost{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3rem;
 }
 
-#createform {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
+#createform{
+    background-color: rgba(255, 255, 255, 0.731);
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+
 }
 
-.createlabels {
-  align-items: center;
-  font-size: 1.5rem;
-  margin: 2rem;
-  padding: 1rem;
+.createlabels{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.533);
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 2rem;
+    padding: 1rem;
+    border: solid black;
 }
 
-input {
-  margin: 1rem;
-  height: 2rem;
-  width: 15rem;
-  align-self: center;
-  border: solid rgb(172, 114, 6);
+input{
+    margin: 1rem;
+    height: 2rem;
+    width: 15rem;
+    background-color: rgba(255, 255, 255, 0.736);
 }
 
-#create-button {
-  height: 3rem;
-  font-size: 1.5rem;
+
+
+#create-button{
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid black;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    width: 29rem;
+    align-self: center;
 }
+
+#newpost{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+

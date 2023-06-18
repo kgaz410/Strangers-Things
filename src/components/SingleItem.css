@@ -1,1 +1,22 @@
 
+.single-item-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#message-author{
+    display: flex;
+    flex-direction: column;
+}
+
+.filtered-item{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
