@@ -11,9 +11,11 @@ body {
 .item-container {
   display: flex;
   width: 20%;
-
+  border: 2px solid #36454f;
+  background-color: rgba(34, 6, 34, 0.448);
+  box-shadow: 20px 20px 10px rgba(23, 23, 24, 0.384);
   justify-content: center, space-evenly;
-
+  margin: 2rem;
   padding: 5%;
 }
 

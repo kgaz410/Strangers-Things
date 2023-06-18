@@ -1,3 +1,4 @@
+
 .single-item-container{
     display: flex;
     flex-direction: column;
@@ -18,3 +19,4 @@
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+

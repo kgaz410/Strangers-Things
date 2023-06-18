@@ -1,8 +1,10 @@
-nav{
-    display: flex;
-    height: 5rem;
-    justify-content: space-evenly;
-    align-items: center;
+nav {
+  display: flex;
+  height: 5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(44, 10, 44, 0.448);
+
 
   
 }
@@ -20,10 +22,13 @@ nav{
     letter-spacing: 0.1rem;
 }
 
-.links{
-    font-size: 2rem;
-    font-family: sans-serif ;
-    color: black;
-
-
+  border: solid rgba(147, 4, 4, 0.18);
 }
+
+
+.links {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: lightgreen;
+}
+
