@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 #loginform{
     display: flex;
     flex-direction: column;
@@ -8,14 +10,14 @@
 
 #loginheader{
     font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: kanit, sans-serif;
     text-align: center;
     margin-bottom: 5rem;
     letter-spacing: 0.25rem;
 }
 
 .labels{
-
+    font-family: kanit, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +34,7 @@
     border-color: rgb(23, 23, 23);
     border-radius: 0.5rem;
     font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: kanit, sans-serif;
     background-color: rgb(46, 46, 46);
     color: white;
     letter-spacing: 0.1rem;

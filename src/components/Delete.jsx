@@ -17,7 +17,7 @@ function Delete(props) {
    
         try {
             const result = await deletePost(props.id); // Passing our async function in from below.
-            // console.log(result.data)
+        
             navigate("/")
         } catch (error) {
             console.log(error)
