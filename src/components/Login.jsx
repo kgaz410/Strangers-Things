@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"
 
 const COHORT_NAME = "2304-ftb-et-web-ft";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -49,9 +50,9 @@ function Login(props) {
   }
 
   return (
-    <div>
+    <div id="login-container">
       <h1>LOGIN</h1>
-      <form onSubmit={handleSubmit}>
+      <form id="loginform" onSubmit={handleSubmit}>
         <label>
           Username:
           <input

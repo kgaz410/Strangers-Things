@@ -1,0 +1,12 @@
+#login-container{
+    border: solid hotpink;
+}
+
+
+#loginform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid rebeccapurple;
+}

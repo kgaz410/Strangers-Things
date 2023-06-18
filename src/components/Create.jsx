@@ -71,6 +71,7 @@ function Create(props) {
     return(
         <div id="createpost">
             <form onSubmit={handleSubmit} id="createform">
+                <h1 id="newpost">New Post Form</h1>
                 <label className="createlabels">Title:
                     <input
                         type="text"

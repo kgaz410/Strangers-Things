@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Messages.css"
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -48,15 +49,15 @@ function Message(props) {
   }
 
   return (
-    <div>
-      <h1>Message Author</h1>
-      <form onSubmit={handleSubmit}>
+    <div id="message-seller-container">
+      <h1 id="message-seller">Message Seller</h1>
+      <form id="message-form" onSubmit={handleSubmit}>
         <label htmlFor="messages">
-          Send a message to the Author
           <textarea
             rows="10"
             cols="30"
             value={newMessage}
+            placeholder="Message to Seller Here"
             onChange={(e) => {
               console.log(e.target.value);
               setNewMessage(e.target.value);

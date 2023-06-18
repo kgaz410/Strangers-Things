@@ -10,8 +10,8 @@ function NavBar(props) {
           {/* // This link is only showed when user is logged in. */}
           <Link className="links" to="/">Posts</Link>
           <Link className="links" to="/profile">My Profile</Link>
-          <Link className="links" to="/create-post">Create a Post</Link>
-          <button className="logout-button"
+          <Link className="links" to="/create-post">Create Post</Link>
+          <button id="logout-button"
             onClick={() => {
               props.setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
