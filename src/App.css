@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 body {
   background: linear-gradient(to right, #36454f 22%, #052c54);
   color: whitesmoke;
@@ -17,6 +19,7 @@ body {
   justify-content: center, space-evenly;
   margin: 2rem;
   padding: 5%;
+  font-family: Kanit;
 }
 
 #all-Items-Container {
