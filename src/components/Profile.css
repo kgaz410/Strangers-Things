@@ -1,0 +1,24 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 2px solid green; */
+}
+
+.profileTag {
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: center;
+}
+
+.profileMessages {
+  font-size: 2rem;
+  border: 2px solid rgb(56, 56, 54);
+  margin: 2rem;
+  padding: 1%;
+  background-color: #0a101e;
+}
+
+#messageBox {
+  /* border: 2px solid red; */
+}
