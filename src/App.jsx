@@ -81,7 +81,7 @@ function App() {
         />
         <Route
           path="/create-post"
-          element={<Create isLoggedIn={isLoggedIn} />}
+          element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
         />
       </Routes>
     </div>

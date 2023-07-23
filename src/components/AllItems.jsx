@@ -39,10 +39,12 @@ const AllItems = (props) => {
             console.log(props.loggedInUser);
             return (
               <div key={e._id} className="item-container">
+                
                 <Link className="link-text" to={`/post/${e._id}`}>
                   {" "}
                   {e.title.toUpperCase()}{" "}
                 </Link>
+
                 {props.loggedInUser === e.author.username ? (
                   <Delete
                     id={e._id}

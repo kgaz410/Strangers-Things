@@ -54,11 +54,16 @@ function Create(props) {
                     })
                 });  // Outside of fetch starting here.
                 const result = await response.json()
-    
-                setTitle(result.title)
-                setDescription(result.description)
-                setPrice(result.price)
-                setDeliver(result.willDeliver)
+                console.log(result, props.items)
+                const itemsCopy = [...props.items]
+                itemsCopy.push(result.data.post)
+                props.setItems(itemsCopy)
+
+                setTitle("")
+                setDescription("")
+                setPrice("")
+                setDeliver("")
+
                 console.log(result)
                 return result;
             }

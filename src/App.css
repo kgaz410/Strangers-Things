@@ -12,7 +12,7 @@ body {
 
 .item-container {
   display: flex;
-  width: 20%;
+  width: 20rem;
   border: 2px solid #36454f;
   background-color: rgba(34, 6, 34, 0.448);
   box-shadow: 20px 20px 10px rgba(23, 23, 24, 0.384);
@@ -23,7 +23,7 @@ body {
 }
 
 #all-Items-Container {
-  font-size: 2.2rem;
+  font-size: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
